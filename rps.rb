@@ -3,7 +3,7 @@ def rps
     puts "0(グー),1(チョキ),2(パー),3(戦わない)"
     
     put_out_rps = gets.to_i
-    puts "ホイ！"
+    puts "ぽん！"
     puts "---------------"
     
     pc_put_out = rand(3)
@@ -18,12 +18,12 @@ def rps
         puts "相手：#{jankens[pc_put_out]}を出しました"
         puts "---------------"
     elsif put_out_rps == pc_put_out
-        case_patttern = "パターンA"
         jankens = ["グー", "チョキ", "パー"]
         
         puts "あなた：#{jankens[put_out_rps]}を出しました"
         puts "相手：#{jankens[pc_put_out]}を出しました"
-        puts "あいこで"
+        puts "あいこです"
+        puts "---------------"
         return true
     elsif put_out_rps == 3
         puts "パスします。"
@@ -33,7 +33,7 @@ def rps
         puts "入力された値が無効です"
         return true
     else
-        case_patttern = "パターンA"
+        case_patttern = "パターンB"
         jankens = ["グー", "チョキ", "パー"]
         
         puts "あなた：#{jankens[put_out_rps]}を出しました"
@@ -65,6 +65,35 @@ def rps
             
             puts "あなた：#{directions[put_out_hoi]}を出しました"
             puts "相手：#{directions[pc_put_out_hoi]}を出しました"
+            puts "---------------"
+            puts "あなたの勝ちです！！"
+             puts "---------------"
+            return false
+        end
+    when "パターンB"
+        puts "あっち向いて~"
+        puts "0(上),1(下),2(左),3(右)"
+        
+        put_out_hoi = gets.to_i
+        puts "ホイ！"
+        puts "---------------"
+        
+        pc_put_out_hoi = rand(4)
+        
+        if put_out_hoi != pc_put_out_hoi
+            directions = ["上", "下", "左", "右"]
+            
+            puts "あなた：#{directions[put_out_hoi]}を出しました"
+            puts "相手：#{directions[pc_put_out_hoi]}を出しました"
+            puts "---------------"
+            return true
+        else
+            directions = ["上", "下", "左", "右"]
+            
+            puts "あなた：#{directions[put_out_hoi]}を出しました"
+            puts "相手：#{directions[pc_put_out_hoi]}を出しました"
+            puts "---------------"
+            puts "あなたの負けです(泣)"
             puts "---------------"
             return false
         end
