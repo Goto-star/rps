@@ -26,9 +26,9 @@ def rps
         puts "あいこで"
         return true
     elsif put_out_rps == 3
-        puts "終了します。"
+        puts "パスします。"
         puts "---------------"
-        return false
+        return true
     elsif put_out_rps > 3
         puts "入力された値が無効です"
         return true
@@ -53,7 +53,7 @@ def rps
         
         pc_put_out_hoi = rand(4)
         
-        if put_out_hoi != pc_put_out
+        if put_out_hoi != pc_put_out_hoi
             directions = ["上", "下", "左", "右"]
             
             puts "あなた：#{directions[put_out_hoi]}を出しました"
@@ -64,7 +64,7 @@ def rps
             directions = ["上", "下", "左", "右"]
             
             puts "あなた：#{directions[put_out_hoi]}を出しました"
-            puts "相手：#{directions[pc_put_out]}を出しました"
+            puts "相手：#{directions[pc_put_out_hoi]}を出しました"
             puts "---------------"
             return false
         end
